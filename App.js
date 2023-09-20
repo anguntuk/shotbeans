@@ -9,14 +9,17 @@ import Registration from './Registration.js';
 import UserDetails from './UserDetails.js';
 import SellerDeviceDetails from './SellerDeviceDetails.js';
 import BuyersDeviceDetails from './BuyersDeviceDetails.js';
-import AccountPage  from './AccountPage.js';
+import AccountPage from './AccountPage.js';
+import MoneyLendAppHomeScreen from './MoneyLendAppHomeScreen.js';
+import IntialScreen from './IntialScreen.js';
 
 
 export const App = () => {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={MoneyLendAppHomeScreen} />
         <Stack.Screen name="SignIn" component={HomeScreen} />
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen
@@ -27,6 +30,7 @@ export const App = () => {
         <Stack.Screen name="SellerDeviceDetails" component={SellerDeviceDetails} />
         <Stack.Screen name="BuyersDeviceDetails" component={BuyersDeviceDetails} />
         <Stack.Screen name="AccountPage" component={AccountPage} />
+        <Stack.Screen name="IntialScreen" component={IntialScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

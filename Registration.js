@@ -3,6 +3,7 @@ import React, { useState} from 'react';
 import { Text, View, TextInput, TouchableOpacity, Button, SafeAreaView, StyleSheet } from 'react-native';
 import UserPaniWalaScreen from './UserPaniWalaScreen.js';
 //import { useNavigation } from '@react-navigation/native';
+import GoogleButton from './GoogleButton.js';
 
 export const Registration = props => {
   const handleRegisterPress = () => {
@@ -28,6 +29,8 @@ export const Registration = props => {
           <TouchableOpacity style={styles.signUpButton} onPress={handleRegisterPress}>
             <Text style={styles.signUpButtonText}>Sign Up</Text>
           </TouchableOpacity>
+
+          <GoogleButton/>
         </View>
     </SafeAreaView>
   );
