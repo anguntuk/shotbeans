@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const MoneyLendAppHomeScreen = props => {
   const handleGetStarted = () => {
-    props.navigation.navigate('IntialScreen'); // Redirect to the specified screen
+    props.navigation.navigate('SignIn'); // Redirect to the specified screen
   };
   return (
     <View style={styles.container}>
@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainImage: {
-    width: 300,
+    width: 400,
     height: 400,
     resizeMode: 'contain',
   },
   mainText: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 20,
+    //marginTop: 20,
     color: '#333', // Main text color
   },
   getStartedButton: {
