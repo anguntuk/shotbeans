@@ -2,13 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import Slider from '@react-native-community/slider';
 
 const BuyersDeviceDetails = () => {
   const [deviceTypes, setDeviceTypes] = useState([{ id: 'laptop', name: 'Laptop' }, { id: 'mobile', name: 'Mobile' }]);
   const [brands, setBrands] = useState([]);
   const [selectedDeviceType, setSelectedDeviceType] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
-  const [priceSorting, setPriceSorting] = useState('');
+  const [priceRange, setPriceRange] = useState([1000, 50000]);
+  const handleValueChange = (values) => {
+    setPriceRange(values);
+  };
   useEffect(() => {
     fetchBrands();
   }, [selectedDeviceType]);
@@ -55,15 +59,22 @@ const BuyersDeviceDetails = () => {
             <Picker.Item key={brand.id} label={brand.name} value={brand.id} />
           ))}
         </Picker>
-        <Picker
-          style={styles.priceDropdown}
-          selectedValue={priceSorting}
-          onValueChange={(itemValue) => setPriceSorting(itemValue)}
-        >
-          <Picker.Item label="Select Sorting" value="" />
-          <Picker.Item label="Low to High" value="lowToHigh" />
-          <Picker.Item label="High to Low" value="highToLow" />
-        </Picker>
+        <Text style={styles.label}>Price Range</Text>
+        <View style={styles.sliderContainer}>
+          <Text style={styles.value}>{priceRange[0]}</Text>
+          <Slider
+            style={styles.slider}
+            minimumValue={1000}
+            maximumValue={50000}
+            step={1000}
+            minimumTrackTintColor="#007bff"
+            maximumTrackTintColor="#ccc"
+            thumbTintColor="#007bff"
+            value={priceRange[0]}
+            onValueChange={(value) => handleValueChange([value, priceRange[1]])}
+          />
+          <Text style={styles.value}>{priceRange[1]}</Text>
+        </View>
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
@@ -97,32 +108,28 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1,
   },
-  priceSortingContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  priceSortingLabel: {
-    marginRight: 10,
+  label: {
     fontSize: 16,
+    color: 'black',
+  },
+  sliderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  slider: {
+    flex: 1,
+    marginVertical: 10,
+  },
+  value: {
+    fontSize: 14,
     fontWeight: 'bold',
-  },
-  priceDropdownContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  priceDropdown: {
-    marginBottom: 20,
-    borderColor: '#ccc',
-    borderWidth: 1,
-  },
-  priceRangeText: {
-    fontSize: 16,
   },
   button: {
     backgroundColor: 'black',
     paddingVertical: 15,
     alignItems: 'center',
+    marginTop: 20,
   },
   buttonText: {
     color: 'white',

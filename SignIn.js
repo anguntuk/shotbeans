@@ -59,12 +59,12 @@ export const HomeScreen = props => {
           <TouchableOpacity style={styles.signInButton} onPress={handleSignInPress}>
             <Text style={styles.signInButtonText}>Sign In</Text>
           </TouchableOpacity>
-        </View>
-        <View style={styles.buttonContainer}>
-          <Text style={styles.registerTextStyle}>Don't have an account? </Text>
-          <TouchableOpacity onPress={handleSignUpPress}>
-            <Text style={styles.registerLink}>Register</Text>
-          </TouchableOpacity>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.registerTextStyle}>Don't have an account? </Text>
+            <TouchableOpacity onPress={handleSignUpPress}>
+              <Text style={styles.registerLink}>Register</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
       <View style={styles.footer}></View>
@@ -75,9 +75,10 @@ export const HomeScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F5F5F5',
   },
   header: {
-    backgroundColor: 'black',
+    backgroundColor: '#FF9A8A',
     paddingVertical: 20,
     alignItems: 'center',
     //marginBottom: 20,
@@ -92,13 +93,14 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#F5F5F5',
     padding: 20,
     paddingTop: 40,
   },
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
+    backgroundColor: '#FFF',
     padding: 10,
     marginBottom: 20,
   },
@@ -108,6 +110,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     marginBottom: 20,
+    backgroundColor: '#FFF',
   },
   passwordInput: {
     flex: 1,
@@ -117,7 +120,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   signInButton: {
-    backgroundColor: 'black',
+    backgroundColor: '#FF9A8A',
     paddingVertical: 10,
     alignItems: 'center',
     borderRadius: 5,
@@ -127,6 +130,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
+    fontSize: 16,
   },
   buttonContainer: {
     flexDirection: 'row', // Display items side by side
@@ -137,16 +141,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: 'black',
     fontSize: 16,
-    marginTop: 20,
+    marginTop: 40,
   },
   registerLink: {
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: 40,
     color: 'blue',
     fontSize: 20,
   },
   footer: {
-    backgroundColor: 'black',
+    backgroundColor: '#FF9A8A',
     height: 2,
     width: '100%',
   },

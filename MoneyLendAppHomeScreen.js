@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     color: '#333', // Main text color
   },
   getStartedButton: {
-    backgroundColor: '#007bff', // Button background color
+    backgroundColor: '#FF9A8A', // Button background color
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 8,
