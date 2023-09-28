@@ -40,6 +40,7 @@ export const HomeScreen = props => {
         <Text style={styles.headerTitle}>Shot Beans</Text>
       </View>
       <View style={styles.content}>
+        <Text style={styles.subHeading}>Signin</Text>
         <View style={styles.formContainer}>
           <TextInput
             style={styles.input}
@@ -57,7 +58,7 @@ export const HomeScreen = props => {
             </TouchableOpacity> */}
           </View>
           <TouchableOpacity style={styles.signInButton} onPress={handleSignInPress}>
-            <Text style={styles.signInButtonText}>Sign In</Text>
+            <Text style={styles.signInButtonText}>Signin</Text>
           </TouchableOpacity>
           <View style={styles.buttonContainer}>
             <Text style={styles.registerTextStyle}>Don't have an account? </Text>
@@ -76,16 +77,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
   },
   header: {
-    backgroundColor: '#FF9A8A',
-    paddingVertical: 20,
-    alignItems: 'center',
-    //marginBottom: 20,
+    //backgroundColor: '#FF9A8A',
+    marginBottom: 20,
+
   },
   headerTitle: {
-    color: 'white',
-    fontSize: 24,
+    color: '#FF9A8A',
+    fontSize: 40,
+    fontWeight: 'bold',
+  },
+  subHeading: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginBottom: 20,
     fontWeight: 'bold',
   },
   formContainer: {
@@ -95,10 +104,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F5F5',
     padding: 20,
-    paddingTop: 40,
+    paddingTop: 60,
+    alignItems: 'center',
   },
   input: {
+    width: 300,
     borderWidth: 1,
+    borderRadius: 10,
     borderColor: '#ccc',
     backgroundColor: '#FFF',
     padding: 10,
@@ -108,6 +120,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
+    borderRadius: 10,
     borderColor: '#ccc',
     marginBottom: 20,
     backgroundColor: '#FFF',
@@ -120,17 +133,16 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   signInButton: {
-    backgroundColor: '#FF9A8A',
+    backgroundColor: '#FF9A8A', // Button background color
+    paddingHorizontal: 20,
     paddingVertical: 10,
-    alignItems: 'center',
-    borderRadius: 5,
-    marginTop: 20,
+    borderRadius: 8,
   },
   signInButtonText: {
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 18,
   },
   buttonContainer: {
     flexDirection: 'row', // Display items side by side
